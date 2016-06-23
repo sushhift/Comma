@@ -45,7 +45,7 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
 
-    apt daggerDependencies.compiler
+    kapt daggerDependencies.compiler
     compile daggerDependencies.dagger
     provided javaAnnotations
 
@@ -53,6 +53,11 @@ dependencies {
 
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }
+
 repositories {
     mavenCentral()
+}
+
+kapt {
+    generateStubs = true
 }
