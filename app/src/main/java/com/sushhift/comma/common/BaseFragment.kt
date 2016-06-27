@@ -1,9 +1,10 @@
 package com.sushhift.comma.common
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.Toolbar
-import com.sushhift.comma.R
+import android.support.v4.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
@@ -23,35 +24,13 @@ import com.sushhift.comma.R
  * specific language governing permissions and limitations
  * under the License.
  *
- * Created by Sushhi <3 on 06/2016.
- *
+ * Created by Susshi <3 on 06/2016.
  */
-abstract class BaseActivity : AppCompatActivity() {
+abstract class BaseFragment : Fragment() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(getLayout())
-        setupToolbar()
-        initView(savedInstanceState)
+    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        return container?.inflate(getFragmentLayout())
     }
 
-    /**
-     * Initialize your UI components. This method is executed within [ android.app.Activity#onCreate ]
-     * */
-    open fun initView(savedInstanceState: Bundle?) {
-
-    }
-
-    fun setupToolbar() {
-        val toolbar : Toolbar? = findViewById(R.id.toolbar) as Toolbar?
-
-        if(toolbar != null) {
-            setSupportActionBar(toolbar)
-        }
-    }
-
-    /**
-     * @return Resource id of your layout file
-     * */
-    abstract fun getLayout() : Int
+    abstract fun getFragmentLayout(): Int
 }

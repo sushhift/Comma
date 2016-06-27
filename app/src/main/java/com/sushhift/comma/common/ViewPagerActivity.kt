@@ -1,9 +1,10 @@
 package com.sushhift.comma.common
 
 import android.os.Bundle
+import android.support.v4.app.Fragment
+import android.support.v4.app.FragmentPagerAdapter
+import android.support.v4.view.ViewPager
 import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.Toolbar
-import com.sushhift.comma.R
 
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
@@ -23,35 +24,23 @@ import com.sushhift.comma.R
  * specific language governing permissions and limitations
  * under the License.
  *
- * Created by Sushhi <3 on 06/2016.
- *
+ * Created by Susshi <3 on 06/2016.
  */
-abstract class BaseActivity : AppCompatActivity() {
+abstract class ViewPagerActivity : BaseActivity(){
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(getLayout())
-        setupToolbar()
-        initView(savedInstanceState)
+    val pager : ViewPager by lazy {
+        findViewById(getPagerId()) as ViewPager
     }
 
-    /**
-     * Initialize your UI components. This method is executed within [ android.app.Activity#onCreate ]
-     * */
-    open fun initView(savedInstanceState: Bundle?) {
-
+    val fragments : List<Fragment> by lazy {
+        createFragments()
     }
 
-    fun setupToolbar() {
-        val toolbar : Toolbar? = findViewById(R.id.toolbar) as Toolbar?
-
-        if(toolbar != null) {
-            setSupportActionBar(toolbar)
-        }
+    override fun initView(savedInstanceState:Bundle?){
+        val adapter : FragmentPagerAdapter = BasePagerAdapter(supportFragmentManager, fragments)
+        pager.adapter= adapter
     }
 
-    /**
-     * @return Resource id of your layout file
-     * */
-    abstract fun getLayout() : Int
+    abstract fun createFragments() : List<Fragment>
+    abstract fun getPagerId(): Int
 }
