@@ -1,4 +1,4 @@
-package com.sushhift.comma.login
+package com.sushhift.comma.view
 
 import android.view.View
 
@@ -20,7 +20,9 @@ import android.view.View
  * specific language governing permissions and limitations
  * under the License.
  *
- * Created by Susshi <3 on 06/2016.
+ * Created by Sushhi <· on 06/2016.
  */
-class LoginActivity {
+fun View.dipToPx(dpValue : Float) : Int{
+    val scale = resources.displayMetrics.density
+    return (dpValue * scale + 0.5).toInt()
 }
