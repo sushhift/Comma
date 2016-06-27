@@ -1,5 +1,9 @@
 package com.sushhift.comma.login
 
+import android.os.Bundle
+import com.sushhift.comma.R
+import com.sushhift.comma.common.BaseFragment
+
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -20,5 +24,19 @@ package com.sushhift.comma.login
  *
  * Created by Susshi <3 on 06/2016.
  */
-class LoginActivity {
+class SignInFragment : BaseFragment() {
+
+    companion object {
+        fun newInstance(): SignInFragment {
+            val args: Bundle = Bundle()
+
+            val fragment: SignInFragment = SignInFragment()
+            fragment.arguments = args
+            return fragment
+        }
+    }
+
+    override fun getFragmentLayout(): Int {
+        return R.layout.fragment_sign_in
+    }
 }

@@ -1,4 +1,4 @@
-package com.sushhift.comma.login
+package com.sushhift.comma.view
 
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
@@ -18,7 +18,6 @@ package com.sushhift.comma.login
  * specific language governing permissions and limitations
  * under the License.
  *
- * Created by Susshi <3 on 06/2016.
+ * Created by Sushhi <3 on 06/2016.
+ *
  */
-class LoginFragment {
-}
