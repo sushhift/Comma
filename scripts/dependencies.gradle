@@ -13,6 +13,7 @@ ext {
     playServicesPackage = 'com.google.android.gms'
     facebookPackage = 'com.facebook.android'
     javaAnnotationsPackage = 'javax.annotation'
+    googlePackage = 'com.google.android'
 
     //Version
     supportVersion = '23.4.0'
@@ -68,6 +69,7 @@ ext {
     circleImageView = buildDependency(hdodenhofPackage, 'circleimageview', circleImageVersion)
     facebookSdk = buildDependency(facebookPackage, 'facebook-android-sdk', facebookVersion)
     javaAnnotations = buildDependency(javaAnnotationsPackage, 'jsr250-api', javaAnnotationsVersion)
+    flexbox = buildDependency(googlePackage, 'flexbox', '0.2.2')
 }
 
 String buildDependency(String pack, String dependency, String version) {
