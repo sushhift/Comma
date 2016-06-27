@@ -1,5 +1,7 @@
 package com.sushhift.comma.view
 
+import android.view.View
+
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -21,3 +23,7 @@ package com.sushhift.comma.view
  * Created by Sushhi <3 on 06/2016.
  *
  */
+fun View.dipToPx(dpValue : Float) : Int{
+    val scale = resources.displayMetrics.density
+    return (dpValue * scale + 0.5).toInt()
+}
