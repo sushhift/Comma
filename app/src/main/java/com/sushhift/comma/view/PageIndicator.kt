@@ -91,10 +91,10 @@ class PageIndicator : LinearLayout {
         indicatorWidth = typedArray.getDimensionPixelSize(R.styleable.PageIndicator_ci_width, -1)
         indicatorHeight = typedArray.getDimensionPixelSize(R.styleable.PageIndicator_ci_height, -1)
         indicatorMargin = typedArray.getDimensionPixelSize(R.styleable.PageIndicator_ci_margin, -1)
-        animatorResId = typedArray.getDimensionPixelSize(R.styleable.PageIndicator_ci_animator, 0)
-        animatorReverseResId = typedArray.getDimensionPixelSize(R.styleable.PageIndicator_ci_animator_reverse, 0)
-        indicatorBackgroundResId = typedArray.getDimensionPixelSize(R.styleable.PageIndicator_ci_drawable, 0)
-        unselectedIndicatorBackgroundResId = typedArray.getDimensionPixelSize(R.styleable.PageIndicator_ci_drawable_unselected, 0)
+        animatorResId = typedArray.getResourceId(R.styleable.PageIndicator_ci_animator, 0)
+        animatorReverseResId = typedArray.getResourceId(R.styleable.PageIndicator_ci_animator_reverse, 0)
+        indicatorBackgroundResId = typedArray.getResourceId(R.styleable.PageIndicator_ci_drawable, 0)
+        unselectedIndicatorBackgroundResId = typedArray.getResourceId(R.styleable.PageIndicator_ci_drawable_unselected, 0)
 
         orientation = HORIZONTAL
         setGravity(Gravity.CENTER)

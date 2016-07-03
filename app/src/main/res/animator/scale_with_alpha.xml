@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <set xmlns:android="http://schemas.android.com/apk/res/android"
-    android:duration="@android:integer/config_shortAnimTime">
+    android:duration="@android:integer/config_longAnimTime">
 
     <objectAnimator
         android:propertyName="alpha"
@@ -19,4 +19,9 @@
         android:valueType="floatType"
         android:valueFrom="1.0"
         android:valueTo="1.8"/>
+
+    <objectAnimator
+        android:propertyName="rotationY"
+        android:valueFrom="0"
+        android:valueTo="360"/>
 </set>

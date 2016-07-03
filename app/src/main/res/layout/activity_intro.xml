@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <FrameLayout
@@ -19,7 +20,15 @@
             android:layout_width="match_parent"
             android:layout_height="20dp"
             android:layout_gravity="bottom"
-            android:layout_margin="@dimen/spacing_normal"/>
+            android:layout_marginBottom="@dimen/spacing_large"
+            android:layout_marginStart="@dimen/spacing_normal"
+            android:layout_marginEnd="@dimen/spacing_normal"
+            app:ci_drawable="@drawable/ic_fish"
+            app:ci_drawable_unselected="@drawable/ic_fish"
+            app:ci_width="16dp"
+            app:ci_height="16dp"
+            app:ci_margin="8dp"/>
+
     </FrameLayout>
 
     <LinearLayout
