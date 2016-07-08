@@ -1,8 +1,4 @@
-package com.sushhift.comma.common
-
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+package com.sushhift.comma.login
 
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
@@ -22,9 +18,7 @@ import android.view.ViewGroup
  * specific language governing permissions and limitations
  * under the License.
  *
- * Created by Susshi <3 on 06/2016.
+ * Created by Sushhi <3 on 07/2016.
  */
-
-fun ViewGroup.inflate(layoutRes: Int, attachToRoot: Boolean = false): View {
-    return LayoutInflater.from(context).inflate(layoutRes, this, attachToRoot)
+interface LoginView {
 }

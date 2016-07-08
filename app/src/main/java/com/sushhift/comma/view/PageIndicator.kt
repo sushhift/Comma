@@ -43,7 +43,7 @@ class PageIndicator : LinearLayout {
     var indicatorWidth = -1
     var indicatorMargin = -1
     var indicatorHeight = -1
-    var animatorResId = R.animator.scale_with_alpha
+    var animatorResId = R.animator.anim_scale_and_flip
     var animatorReverseResId = 0
     var indicatorBackgroundResId = R.drawable.page_indicator
     var unselectedIndicatorBackgroundResId = R.drawable.page_indicator
@@ -111,7 +111,7 @@ class PageIndicator : LinearLayout {
         indicatorHeight = if (indicatorHeight < 0) dipToPx(DEFAULT_INDICATOR_WIDTH) else indicatorHeight
         indicatorMargin = if (indicatorMargin < 0) dipToPx(DEFAULT_INDICATOR_WIDTH) else indicatorMargin
 
-        animatorResId = if (animatorResId == 0) R.animator.scale_with_alpha else animatorResId
+        animatorResId = if (animatorResId == 0) R.animator.anim_scale_and_flip else animatorResId
 
         indicatorBackgroundResId = if(indicatorBackgroundResId == 0) R.drawable.page_indicator else indicatorBackgroundResId
         unselectedIndicatorBackgroundResId= if(unselectedIndicatorBackgroundResId == 0) R.drawable.page_indicator else unselectedIndicatorBackgroundResId

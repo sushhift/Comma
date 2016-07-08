@@ -39,6 +39,7 @@
 
         <Button
             style="?buttonBarButtonStyle"
+            android:id="@+id/signInButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
@@ -56,6 +57,7 @@
 
         <Button
             style="?buttonBarButtonStyle"
+            android:id="@+id/signUpButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"

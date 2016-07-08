@@ -1,10 +1,8 @@
-package com.sushhift.comma.login.intro
+package com.sushhift.comma.login
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
 import com.sushhift.comma.R
-import com.sushhift.comma.common.ViewPagerActivity
-import kotlinx.android.synthetic.main.activity_intro.*
+import com.sushhift.comma.common.BaseFragment
 
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
@@ -24,28 +22,22 @@ import kotlinx.android.synthetic.main.activity_intro.*
  * specific language governing permissions and limitations
  * under the License.
  *
- * Created by Susshi <3 on 06/2016.
+ * Created by Sushhi <3 on 07/2016.
  */
-class IntroActivity : ViewPagerActivity() {
 
-    override fun createFragments(): List<Fragment> {
-        return listOf(IntroFragment.newInstance(), IntroFragment.newInstance())
+class SignUpFragment : BaseFragment(){
+
+    companion object {
+        fun newInstance(): SignUpFragment {
+            val args: Bundle = Bundle()
+
+            val fragment: SignUpFragment = SignUpFragment()
+            fragment.arguments = args
+            return fragment
+        }
     }
 
-    override fun getPagerId(): Int {
-        return R.id.introPager
+    override fun getFragmentLayout(): Int {
+        return R.layout.fragment_sign_up
     }
-
-    override fun getLayout(): Int {
-        return R.layout.activity_intro
-    }
-
-    override fun initView(savedInstanceState: Bundle?) {
-        super.initView(savedInstanceState)
-        pagerIndicator.viewPager = pager
-
-        signInButton.setOnClickListener({view -> })
-        signUpButton.setOnClickListener({view -> })
-    }
-
 }
