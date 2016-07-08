@@ -20,8 +20,12 @@ package com.sushhift.comma.common
  *
  * Created by Sushhi <3 on 07/2016.
  */
-interface BaseView<T> {
+abstract class PresentableActivity<T:BasePresenter> : BaseActivity(){
 
-    fun setPresenter(presenter: T)
+    override fun onResume() {
+        super.onResume()
+        getViewPresenter().start()
+    }
 
+    abstract fun getViewPresenter() : T
 }
