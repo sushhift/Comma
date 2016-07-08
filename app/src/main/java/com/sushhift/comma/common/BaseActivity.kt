@@ -30,9 +30,17 @@ abstract class BaseActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        injectDependencies()
         setContentView(getLayout())
         setupToolbar()
         initView(savedInstanceState)
+    }
+
+    /**
+     * Inject your dependencies in case you need
+     * */
+    open fun injectDependencies() {
+
     }
 
     /**
