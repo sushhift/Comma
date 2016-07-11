@@ -1,5 +1,7 @@
 package com.sushhift.comma.login
 
+import com.sushhift.comma.common.BasePresenter
+
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -20,7 +22,10 @@ package com.sushhift.comma.login
  *
  * Created by Sushhi <3 on 07/2016.
  */
-class LoginPresenter (val view: LoginView){
+class LoginPresenter (val view: LoginView) : BasePresenter{
+
+    override fun start() {
+    }
 
     fun signIn(){
 

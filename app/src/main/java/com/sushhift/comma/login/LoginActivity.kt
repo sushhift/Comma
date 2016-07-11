@@ -39,7 +39,7 @@ class LoginActivity : FragmentContainerActivity(){
             val args: Bundle = Bundle()
             args.putLong(KEY_LOGIN_MODE, loginMode)
 
-            val intent: Intent = Intent()
+            val intent: Intent = Intent(context, LoginActivity::class.java)
             return intent
         }
     }

@@ -16,5 +16,5 @@
 * specific language governing permissions and limitations
 * under the License.
 *
-* Created by Sushhi <3 on ${MONTH}/${YEAR}.
+* Created by Sushhi on ${MONTH}/${YEAR}.
 */

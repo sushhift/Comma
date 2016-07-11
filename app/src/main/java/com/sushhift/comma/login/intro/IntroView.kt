@@ -1,6 +1,6 @@
 package com.sushhift.comma.login.intro
 
-import com.sushhift.comma.common.BaseView
+import com.sushhift.comma.login.LoginActivity
 
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
@@ -22,5 +22,6 @@ import com.sushhift.comma.common.BaseView
  *
  * Created by Sushhi on 07/2016.
  */
-interface IntroView : BaseView<IntroPresenter>{
+interface IntroView {
+    fun showSignScreen(@LoginActivity.LoginMode loginMode: Long)
 }

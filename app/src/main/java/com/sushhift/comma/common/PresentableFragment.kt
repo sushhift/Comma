@@ -27,5 +27,9 @@ abstract class PresentableFragment<T:BasePresenter> : BaseFragment(){
         getViewPresenter().start()
     }
 
+    /**
+     * @return [ com.sushhift.comma.common.BasePresenter ] instance to be coupled to the
+     * lifecycle of the activity
+     * */
     abstract fun getViewPresenter() : T
 }

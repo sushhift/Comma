@@ -2,9 +2,13 @@ package com.sushhift.comma.login.intro
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import com.sushhift.comma.App
+import com.sushhift.comma.DaggerAppComponent
 import com.sushhift.comma.R
 import com.sushhift.comma.common.ViewPagerActivity
+import com.sushhift.comma.login.LoginActivity
 import kotlinx.android.synthetic.main.activity_intro.*
+import javax.inject.Inject
 
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
@@ -26,7 +30,10 @@ import kotlinx.android.synthetic.main.activity_intro.*
  *
  * Created by Susshi <3 on 06/2016.
  */
-class IntroActivity : ViewPagerActivity() {
+class IntroActivity : ViewPagerActivity(), IntroView {
+
+    @Inject
+    lateinit var introPresenter : IntroPresenter
 
     override fun createFragments(): List<Fragment> {
         return listOf(IntroFragment.newInstance(), IntroFragment.newInstance())
@@ -44,8 +51,19 @@ class IntroActivity : ViewPagerActivity() {
         super.initView(savedInstanceState)
         pagerIndicator.viewPager = pager
 
-        signInButton.setOnClickListener({view -> })
-        signUpButton.setOnClickListener({view -> })
+        signInButton.setOnClickListener({view -> introPresenter.userWantsToSignIn()})
+        signUpButton.setOnClickListener({view -> introPresenter.userWantsToSignUp()})
     }
 
+    override fun injectDependencies() {
+        DaggerIntroComponent.builder()
+                .introPresenterModule(IntroPresenterModule(this))
+                .build()
+                .inject(this)
+    }
+
+    override fun showSignScreen(@LoginActivity.LoginMode loginMode: Long) {
+        val intent = LoginActivity.intent(this, loginMode)
+        startActivity(intent)
+    }
 }

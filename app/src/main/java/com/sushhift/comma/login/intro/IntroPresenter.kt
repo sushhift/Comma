@@ -1,6 +1,8 @@
 package com.sushhift.comma.login.intro
 
-import com.sushhift.comma.common.BasePresenter
+import com.sushhift.comma.login.LoginActivity
+import javax.inject.Inject
+import javax.inject.Named
 
 /**
  * Licensed to the Apache Software Foundation (ASF) under one
@@ -22,9 +24,15 @@ import com.sushhift.comma.common.BasePresenter
  *
  * Created by Sushhi <3 on 07/2016.
  */
-class IntroPresenter(val view: IntroView): BasePresenter{
 
-    override fun start() {
+class IntroPresenter @Inject constructor(val view: IntroView){
+
+    fun userWantsToSignIn() {
+        view.showSignScreen(LoginActivity.SIGN_IN)
+    }
+
+    fun userWantsToSignUp() {
+        view.showSignScreen(LoginActivity.SIGN_UP)
     }
 
 }

@@ -1,5 +1,6 @@
 package com.sushhift.comma.login.intro
 
+import com.sushhift.comma.common.ViewScope
 import dagger.Component
 
 /**

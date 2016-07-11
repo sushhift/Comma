@@ -18,8 +18,12 @@ package com.sushhift.comma.common
  * specific language governing permissions and limitations
  * under the License.
  *
- * Created by Pedro Hernández on 07/2016.
+ * Created by Sushhi <3 on 07/2016.
  */
+/**
+ * Base lifecycle presenter methods to be coupled with [ com.sushhift.comma.common.PresentableActivity ] or
+ * [ com.sushhift.comma.common.PresentableFragment ]
+ * */
 interface BasePresenter {
 
     /**
