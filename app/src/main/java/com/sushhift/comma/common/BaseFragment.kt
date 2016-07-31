@@ -28,8 +28,20 @@ import android.view.ViewGroup
  */
 abstract class BaseFragment : Fragment() {
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        injectDependencies();
+    }
+
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return container?.inflate(getFragmentLayout())
+    }
+
+    /**
+     * Inject your dependencies in case you need
+     * */
+    open fun injectDependencies() {
+
     }
 
     abstract fun getFragmentLayout(): Int
