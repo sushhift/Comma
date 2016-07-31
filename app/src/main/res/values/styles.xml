@@ -6,11 +6,21 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowBackground">@color/gray_850</item>
         <item name="android:navigationBarColor" tools:targetApi="21">@color/colorPrimaryDark</item>
+        <item name="android:textColorHint">@color/gray_600</item>
+        <item name="colorButtonNormal">@color/green</item>
     </style>
 
     <style name="AppTheme.NoActionBar" parent="AppTheme">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="EditText">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="EditText.Icon" parent="EditText">
+        <item name="android:drawablePadding">@dimen/spacing_normal</item>
     </style>
 
 </resources>
